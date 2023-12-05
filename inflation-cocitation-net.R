@@ -1,5 +1,6 @@
 ### Inflation interactive network
 
+# Based on https://aurelien-goutsmedt.com/post/extracting-biblio-data-2/
 
 ## Taking cross-references data 
 references_filtered = readRDS("references_filtered.Rdata")
