@@ -1,4 +1,4 @@
-# Bibliometric analysis based on inflation prediction
+# Bibliometric analysis on inflation prediction
 
 
 This repository includes a bibliometric analysis based on Dimensions (https://app.dimensions.ai/) articles meta-data:
