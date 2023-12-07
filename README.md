@@ -8,5 +8,5 @@ This repository includes a bibliometric analysis based on Dimensions (https://ap
 * Cocitation network code
 * Cocitation network visualization is available in the link below:
   
- [https://agdaniela.github.io/inflation-biblio/]  
+     [https://agdaniela.github.io/inflation-biblio/]  
 
