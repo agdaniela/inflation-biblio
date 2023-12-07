@@ -5,6 +5,8 @@ This repository includes a bibliometric analysis based on Dimensions (https://ap
 
 * Data cleaning process
 * Sciencetometric analysis for publications, references, and country collaboration
-* Cocitation network, available for visualization through this link:
-* agdaniela.github.io/inflation-biblio/  
+* Cocitation network code
+* Cocitation network visualization is available in the link below:
+  
+ [agdaniela.github.io/inflation-biblio/]  
 
