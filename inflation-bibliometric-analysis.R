@@ -61,6 +61,8 @@ data = data[!duplicated(data$Title),]
 #### Data processing
 # Extracting references
 # Based on https://aurelien-goutsmedt.com/post/extracting-biblio-data-2/
+
+
 references_extract <- data %>% 
   filter(! is.na("Cited references")) %>% 
   rename("citing_id" = "Publication ID") %>% 
@@ -74,6 +76,19 @@ column_names <- c("authors", "author_id", "source","year", "volume", "issue",
 # Citations dataframe
 dimensions_direct_citation <- references_extract %>% 
   separate(col = "Cited references", into = column_names, sep = "\\|")
+
+citations <- dimensions_direct_citation %>% 
+  add_count(publication_id) %>% 
+  select(publication_id, n) %>% 
+  unique
+
+references_filtered <- dimensions_references %>% 
+  left_join(citations) %>% 
+  filter(n >= 5)
+
+references_filtered <- references_filtered %>% 
+  relocate(publication_id, .before = authors)  
+
 
 #saveRDS(data, "data.Rdata")
 #saveRDS(dimensions_direct_citation, "dimensions_direct_citation.Rdata")
