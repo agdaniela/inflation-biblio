@@ -1,7 +1,8 @@
 ### Inflation interactive network
 
 # Based on https://aurelien-goutsmedt.com/post/extracting-biblio-data-2/
-
+library(dplyr)
+library(networkflow)
 ## Taking cross-references data 
 references_filtered = readRDS("references_filtered.Rdata")
 
@@ -10,8 +11,7 @@ edges <- biblionetwork::biblio_cocitation(filter(dimensions_direct_citation, pub
                                           "citing_id", 
                                           "publication_id",
                                           weight_threshold = 3)
-
-
+ 
 cocitnet = function(nodes, edges){
   ## First step: creating the network and keeping the main component
   
@@ -40,7 +40,7 @@ cocitnet = function(nodes, edges){
   return(grafico)
 }
 
-
+ 
 # creating my interactive net
 
 ggiraph_net = function(grafico){
